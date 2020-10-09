@@ -76,6 +76,24 @@ sumRange(3); // 6
 //    2 + factorial(1) // 2 + 1
 //    1  // we've reached the base case so no we bubble up
 
+// write a recursive funtion flatten which accepts a nested array and returns a flattened array
+
+// flatten example
+// [[1], [2], [3]] -> [1, 2, 3]
+
+function flattenArray(nestedArr) {
+  var flattened = [];
+
+  for (var i = 0; i < nestedArr.length; i++) {
+    if (Array.isArray(nestedArr[i])) {
+      flattened = flattened.concat(flattenArray(nestedArr[i]));
+    } else {
+      flattened.push(nestedArr[i]);
+    }
+  }
+  return flattened;
+}
+
 // HELPER FUNCTION RECURSION
 
 // helper function recursion works because of closures. An inner helper function is used in side of the main function so that the inner funciton has access to the result variable (without the risk of resetting the variable with each iteration)
@@ -108,5 +126,7 @@ function getEvens(arr) {
   getEvensHelper(arr.slice(1));
   return evens;
 }
+
+// the pattern is that we are shrinking our array with each recursive call until we hit our base case
 
 getEvens([1, 2, 3, 4, 5, 6]); // [2, 4, 6]
