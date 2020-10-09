@@ -76,7 +76,7 @@ sumRange(3); // 6
 //    2 + factorial(1) // 2 + 1
 //    1  // we've reached the base case so no we bubble up
 
-// write a recursive funtion flatten which accepts a nested array and returns a flattened array
+// write a recursive funtion flattenArray which accepts a nested array and returns a flattened array
 
 // flatten example
 // [[1], [2], [3]] -> [1, 2, 3]
