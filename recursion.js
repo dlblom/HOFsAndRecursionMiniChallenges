@@ -14,8 +14,7 @@
 
 // Recursion and the call stack
 // When a function is invoked, it is placed on top of the call stack
-// Functions are removed one at a time from the top of the stack as well
-// When the function hits a return statement, it is popped off the call stack
+// Functions are removed one at a time from the top of the stack when we hit a return statement
 // With recursion, the same function gets pushed onto the call stack over and over and over
 
 // How do we get recursion to stop?
@@ -23,7 +22,7 @@
 
 // STUDENT CHALLENGES
 
-//The student will listen to the prompt and write the code in chrome snippets. Walk through how to use snippets to look at the call stack and how the variables change
+//The student will listen to the prompt and write the code in chrome snippets. Walk through how to use snippets to look at the call stack and how the variables change over time
 
 // INTRODUCTORY CHALLENGES SECTION
 
@@ -99,46 +98,45 @@ function flattenArray(nestedArr) {
 }
 
 // using recursion, write a function that returns an array of names of all the backyard items that are "Active" from the backyardData set
-
-const backyardData = [
+var backyardData = [
   {
-    id: "1",
-    name: "Pool",
-    status: "Inactive",
+    id: 1,
+    name: `Pool`,
+    status: `Inactive`,
     children: [
       {
-        id: "2",
-        name: "Vacuum",
-        status: "Active",
+        id: 2,
+        name: `Vacuum`,
+        status: `Active`,
         children: [
           {
-            id: "3",
-            name: "Pump",
-            status: "Active",
+            id: 3,
+            name: `Pump`,
+            status: `Active`,
           },
         ],
       },
     ],
   },
   {
-    id: "4",
-    name: "Chair",
-    status: "Active",
+    id: 4,
+    name: `Chair`,
+    status: `Active`,
   },
   {
-    id: "5",
-    name: "Plant",
-    status: "Inactive",
+    id: 5,
+    name: `Plant`,
+    status: `Inactive`,
   },
   {
-    id: "6",
-    name: "Umbrella",
-    status: "Inactive",
+    id: 6,
+    name: `Umbrella`,
+    status: `Inactive`,
   },
   {
-    id: "7",
-    name: "Bench",
-    status: "Inactive",
+    id: 7,
+    name: `Bench`,
+    status: `Inactive`,
   },
 ];
 
