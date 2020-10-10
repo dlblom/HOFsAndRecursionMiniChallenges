@@ -25,6 +25,8 @@
 
 //The student will listen to the prompt and write the code in chrome snippets. Walk through how to use snippets to look at the call stack and how the variables change
 
+// INTRODUCTORY CHALLENGES SECTION
+
 // write a recursive countDownToLaunch function which accepts a number and prints "Blast off!" when the count down reaches 0
 function countDownToLaunch(n) {
   if (n === 0) {
@@ -78,6 +80,8 @@ sumRange(3); // 6
 
 // write a recursive funtion flattenArray which accepts a nested array and returns a flattened array
 
+// MEDIUM LEVEL CHALLENGES
+
 // flatten example
 // [[1], [2], [3]] -> [1, 2, 3]
 
@@ -94,14 +98,78 @@ function flattenArray(nestedArr) {
   return flattened;
 }
 
+// using recursion, write a function that returns an array of names of all the backyard items that are "Active" from the backyardData set
+
+const backyardData = [
+  {
+    id: "1",
+    name: "Pool",
+    status: "Inactive",
+    children: [
+      {
+        id: "2",
+        name: "Vacuum",
+        status: "Active",
+        children: [
+          {
+            id: "3",
+            name: "Pump",
+            status: "Active",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "4",
+    name: "Chair",
+    status: "Active",
+  },
+  {
+    id: "5",
+    name: "Plant",
+    status: "Inactive",
+  },
+  {
+    id: "6",
+    name: "Umbrella",
+    status: "Inactive",
+  },
+  {
+    id: "7",
+    name: "Bench",
+    status: "Inactive",
+  },
+];
+
+function getActiveItems(array) {
+  let activeItems = [];
+
+  // loop through the input array
+  for (var i = 0; i < array.length; i++) {
+    // if the status property at the current index is active
+    if (array[i].status === "Active") {
+      // add it to the active items array
+      activeItems.push(array[i].name);
+    }
+    // check if the object has children
+    if (array[i].children) {
+      // if it does, recursivley call function on children
+      activeItems = activeItems.concat(getActiveItems(array[i].children));
+    }
+  }
+  return activeItems;
+}
+
+// getActiveItem(backyardData); // ["Vacuum", "Pump", "Chair"]
+
 // HELPER FUNCTION RECURSION
 
-// helper function recursion works because of closures. An inner helper function is used in side of the main function so that the inner funciton has access to the result variable (without the risk of resetting the variable with each iteration)
+// helper function recursion works because of closures. An inner helper function is used inside of the main function so that the inner funciton has access to the result variable (without the risk of resetting the variable with each iteration)
 
 // Helper function recursion requirements
 // 1. result variable in the main function
-// 2. helper function which contains:
-// a. Base case
+// 2. helper function which contains: Base case and code that adds to the result variable
 // 3. a recursive call to the helper function inside of the main function
 // 4. a return statement for the result in the main function
 
