@@ -10,7 +10,7 @@
 
 // What are the components of recursion?
 // 1. Base Case = where the recursion stops
-// 2. Recursive call to itself
+// 2. Recursive call to function itself
 
 // Recursion and the call stack
 // When a function is invoked, it is placed on top of the call stack
@@ -60,7 +60,7 @@ function factorial(n) {
 //     3 * factorial(2) // bubbles up to be 3 * 2
 //       2 * 1 // we've reached the base case and now the result begins to bubble up
 
-// write a recursive function called sumRange which accepts a number and returns the sum all numbers starting between 1 and the input number
+// write a recursive function called sumRange which accepts a number and returns the sum of all numbers in range (starting from 1 and including n)
 
 // sumRange example
 // 3 + 2 + 1 = 6
@@ -75,11 +75,11 @@ function sumRange(n) {
 sumRange(3); // 6
 //  3 + factorial(2)  // 3 + 3
 //    2 + factorial(1) // 2 + 1
-//    1  // we've reached the base case so no we bubble up
+//    1  // we've reached the base case so now we bubble up
 
 // write a recursive funtion flattenArray which accepts a nested array and returns a flattened array
 
-// MEDIUM LEVEL CHALLENGES
+// NESTED STRUCTURES CHALLENGE
 
 // flatten example
 // [[1], [2], [3]] -> [1, 2, 3]
