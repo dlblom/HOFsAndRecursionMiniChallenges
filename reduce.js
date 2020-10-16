@@ -97,7 +97,7 @@ var dogData = [
 
 var oddAge = dogData.reduce(function (isOdd, dog) {
   if (dog.age % 2 === 1) {
-    isOdd = true;
+    return true;
   }
   return isOdd;
 }, false);
@@ -127,3 +127,4 @@ var flattened = nestedArray.reduce(function (accumulator, currentValue) {
 
 // reduce intro article for students: https://codeburst.io/learn-understand-javascripts-reduce-function-b2b0406efbdc
 // benefits of using reduce article for students: https://medium.com/@dave_lunny/reduce-your-fears-about-array-reduce-629b334ab945
+// https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce
