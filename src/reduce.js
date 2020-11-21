@@ -37,9 +37,10 @@ function arraySum(arr) {
 
 // arraySum(arr) //10
 
-var reduceSum = arr.reduce(function (acc, val) {
-  return acc + val;
-}, 0);
+var getSumOfNumbers = (arr) => {
+  let sum = arr.reduce((acc, val) => acc + val, 0);
+  return sum;
+};
 
 // console.log(reducSum) // 10
 
