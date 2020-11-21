@@ -21,6 +21,8 @@
           window.onload = function () {
             window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
           }; // runs the tests on page load
+
+
           before(function () {
             sinon.spy(Array.prototype, "map");
             sinon.spy(Array.prototype, "sort");
@@ -60,10 +62,10 @@
     </script>
 
       <!-- source files -->
-      <script src="src/reduce.js"></script>
+      <script src="src/higherOrderFunctions.js"></script>
 
       <!-- spec files -->
-      <script src="spec/reduce.spec.js"></script>
+      <script src="spec/higherOrderFunctions.spec.js"></script>
 
   </head>
   <body>

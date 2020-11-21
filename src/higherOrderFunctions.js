@@ -25,6 +25,7 @@
 // array [optional] = the array reduce was called on
 
 // Let's take a look at this example where we use a for loop to to get the sum of numbers in an array. How would you solve this problem using the reduce method?
+
 var arr = [1, 2, 3, 4];
 
 function arraySum(arr) {
@@ -38,11 +39,9 @@ function arraySum(arr) {
 // arraySum(arr) //10
 
 var getSumOfNumbers = (arr) => {
-  let sum = arr.reduce((acc, val) => acc + val, 0);
+  var sum = arr.reduce((acc, val) => acc + val, 0);
   return sum;
 };
-
-// console.log(reducSum) // 10
 
 // given the data below, use the reduce method get the sum of the total population for every city except Waco
 var populationData = [
@@ -64,14 +63,15 @@ var populationData = [
   },
 ];
 
-var citySum = populationData.reduce(function (acc, currentElement) {
-  if (currentElement.city !== `Waco`) {
-    acc += currentElement.pop;
-  }
-  return acc;
-}, 0);
-
-// given the array of dog data, use the reduce method to return true or false depending on whether or not any of the dogs have an odd number age
+var getPopulationSum = (populationData) => {
+  var populationSum = populationData.reduce((acc, currentElement) => {
+    if (currentElement.city !== `Waco`) {
+      acc += currentElement.pop;
+    }
+    return acc;
+  }, 0);
+  return populationSum;
+};
 
 var dogData = [
   {
@@ -96,23 +96,15 @@ var dogData = [
   },
 ];
 
-var oddAge = dogData.reduce(function (isOdd, dog) {
-  if (dog.age % 2 === 1) {
-    return true;
-  }
-  return isOdd;
-}, false);
+// Using the above dogData set, use the reduce method to return an array of only the the dog names
 
-console.log(oddAge); // true
-
-// using the same dogData set, use the reduce method to return an array of all the dog names
-
-var dogNamesOnly = dogData.reduce(function (names, dog) {
-  names = names.concat(dog.name);
-  return names;
-}, []);
-
-// console.log(dogNamesOnly); ["Tucker", "Spot", "Waffles", "Sheldon"]
+var getDogNamesOnly = (dogData) => {
+  var dogNames = dogData.reduce((names, dog) => {
+    names = names.concat(dog.name);
+    return names;
+  }, []);
+  return dogNames;
+};
 
 // given the nested array below, flattened, use the reduce method to flatten the nested array (should return a single array of values)
 var nestedArray = [
@@ -121,10 +113,12 @@ var nestedArray = [
   [4, 5],
 ];
 
-var flattened = nestedArray.reduce(function (accumulator, currentValue) {
-  return accumulator.concat(currentValue);
-}, []);
-// console.log(flattened); // [0, 1, 2, 3, 4, 5]
+var flattenArray = (nestedArray) => {
+  var flattened = nestedArray.reduce((accumulator, currentValue) => {
+    return accumulator.concat(currentValue);
+  }, []);
+  return flattened;
+};
 
 // reduce intro article for students: https://codeburst.io/learn-understand-javascripts-reduce-function-b2b0406efbdc
 // benefits of using reduce article for students: https://medium.com/@dave_lunny/reduce-your-fears-about-array-reduce-629b334ab945
