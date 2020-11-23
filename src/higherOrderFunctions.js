@@ -1,6 +1,88 @@
 // Brief introduction to Higher Order Functions
 // What are HOFs? HOFs are functions that operate on other functions be either taking them in as arguments are returning them
 
+// Map
+
+var populationData = [
+  {
+    city: `Austin`,
+    pop: 964254,
+  },
+  {
+    city: `Waco`,
+    pop: 138183,
+  },
+  {
+    city: `Leander`,
+    pop: 56111,
+  },
+  {
+    city: `Cedar Park`,
+    pop: 76999,
+  },
+];
+
+var getCitiesPopulations = (populationData) => {
+  let populations = populationData.map((city) => city.pop);
+  return populations;
+};
+
+var addToPopulations = (populationData) => {
+  let addedPops = populationData.map((city) => city.pop + 100);
+  return addedPops;
+};
+
+// Filter Method Definintion: creates a new array with all elements that pass the test implemented by the provided function
+
+// Syntax: let newArray = arr.filter(callback(currentValue[, index[, array]]) {
+// return element for newArray, if true
+//}[, thisArg]);
+
+// The callback function accepts the current value being processed in the array and can accept three optional arguments
+
+// index which is the current elements index being processed
+
+// array which is the array that filter was called on
+
+// thisArg which is the value to use as this when executing the callback
+
+var dogData = [
+  {
+    name: `Tucker`,
+    age: 1,
+    breed: `Lab`,
+  },
+  {
+    name: `Spot`,
+    age: 4,
+    breed: `Mutt`,
+  },
+  {
+    name: `Waffles`,
+    age: 6,
+    breed: `Corgi`,
+  },
+  {
+    name: `Sheldon`,
+    age: 11,
+    breed: `Corgi`,
+  },
+];
+
+// write a function that returns an array of only the dog objects with ages under 5
+var getDogsUnderFive = (dogData) => {
+  let dogsUnderFive = dogData.filter((dog) => dog.age < 5);
+  return dogsUnderFive;
+};
+
+// write a function that returns an array of dog names beyond the first index of the dogData array
+var overFirstIndex = (dogData) => {
+  let overIndex = dogData.filter((dog, index) => {
+    return index > 1;
+  });
+  return overIndex;
+};
+
 // Reduce Method Definition: The reduce method is used to apply a function to every element in the array and returns a single value. Another way to think about it is that the reduce method "reduces" an array to a single value.
 
 //Syntax Example: let result = array.reduce(callback, initValue);
@@ -25,7 +107,6 @@
 // array [optional] = the array reduce was called on
 
 // Let's take a look at this example where we use a for loop to to get the sum of numbers in an array. How would you solve this problem using the reduce method?
-
 var arr = [1, 2, 3, 4];
 
 function arraySum(arr) {
@@ -97,7 +178,6 @@ var dogData = [
 ];
 
 // Using the above dogData set, use the reduce method to return an array of only the the dog names
-
 var getDogNamesOnly = (dogData) => {
   var dogNames = dogData.reduce((names, dog) => {
     names = names.concat(dog.name);
@@ -120,6 +200,8 @@ var flattenArray = (nestedArray) => {
   return flattened;
 };
 
-// reduce intro article for students: https://codeburst.io/learn-understand-javascripts-reduce-function-b2b0406efbdc
-// benefits of using reduce article for students: https://medium.com/@dave_lunny/reduce-your-fears-about-array-reduce-629b334ab945
+// reduce intro article: https://codeburst.io/learn-understand-javascripts-reduce-function-b2b0406efbdc
+
+// benefits of using reduce article: https://medium.com/@dave_lunny/reduce-your-fears-about-array-reduce-629b334ab945
+
 // https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce
