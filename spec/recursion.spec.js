@@ -218,9 +218,9 @@
         expect(getEvens([1, 2, 3, 4])).to.eql([2, 4]);
       });
 
-      it("should use helper function recursion", function () {
+      it("should invoke getEvens once", function () {
         getEvens([1, 2, 3, 4, 5, 6]);
-        expect(getEvens.callCount).not.to.be.above(1);
+        expect(getEvens.callCount).to.equal(1);
       });
     });
   });
