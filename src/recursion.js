@@ -1,7 +1,3 @@
-// OFFICE HOURS - RECURSION MINI CHALLENGES
-
-// TALKING POINTS
-
 // What is recursion?
 // A function that calls itself
 
@@ -20,13 +16,8 @@
 // How do we get recursion to stop?
 // we invoke the same function with a different input until we reach the base case!
 
-// STUDENT CHALLENGES
-
-//The student will listen to the prompt and write the code in chrome snippets. Walk through how to use snippets to look at the call stack and how the variables change over time
-
-// INTRODUCTORY CHALLENGES SECTION
-
-// write a recursive countDownToLaunch function which accepts a number and prints "Blast off!" when the count down reaches 0
+// Here's an example of a recursive function
+// Try running this in a google chrome snippet and stepping through the function while observing the call stack over time
 function countDownToLaunch(n) {
   if (n === 0) {
     console.log(`Blast off!`);
@@ -36,8 +27,6 @@ function countDownToLaunch(n) {
     countDownToLaunch(n - 1);
   }
 }
-
-// countDownToLaunch(5)
 
 // write a recursive function called factorial which accepts a number and returns the factorial of that number
 
@@ -72,18 +61,17 @@ function sumRange(n) {
   }
 }
 
-sumRange(3); // 6
+//sumRange(3); // 6
 //  3 + factorial(2)  // 3 + 3
 //    2 + factorial(1) // 2 + 1
 //    1  // we've reached the base case so now we bubble up
 
-// write a recursive funtion flattenArray which accepts a nested array and returns a flattened array
-
-// NESTED STRUCTURES CHALLENGE
+// NESTED STRUCTURES SECTION
 
 // flatten example
 // [[1], [2], [3]] -> [1, 2, 3]
 
+// write a recursive funtion flattenArray which accepts a nested array and returns a flattened array
 function flattenArray(nestedArr) {
   var flattened = [];
 
@@ -126,7 +114,7 @@ var backyardData = [
   {
     id: 5,
     name: `Plant`,
-    status: `Inactive`,
+    status: `Active`,
   },
   {
     id: 6,
@@ -159,7 +147,7 @@ function getActiveItems(array) {
   return activeItems;
 }
 
-// getActiveItem(backyardData); // ["Vacuum", "Pump", "Chair"]
+// getActiveItem(backyardData); // ["Vacuum", "Pump", "Chair", "Plant"]
 
 // HELPER FUNCTION RECURSION
 
@@ -172,6 +160,7 @@ function getActiveItems(array) {
 // 4. a return statement for the result in the main function
 
 // write a recursive funtion getEvens which accepts an array of numbers and returns array which contains only the even numbers
+// use a helper function, getEvensHelper
 
 function getEvens(arr) {
   let evens = [];
