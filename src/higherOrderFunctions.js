@@ -1,7 +1,23 @@
-// Brief introduction to Higher Order Functions
-// What are HOFs? HOFs are functions that operate on other functions be either taking them in as arguments are returning them
+// What are HOFs? HOFs are functions that operate on other functions by either taking them in as arguments are returning them
 
-// Map
+// map, filter and reduce are built-in array methods in javascript
+
+// Map Method definition: creates a new array with the results of calling the provided function on every element in the array
+
+// Syntax
+// let newArray = arr.map(callback(currentValue[, index[, array]]) {
+//   // return element for newArray, after executing something
+// }[, thisArg]);
+
+// callback is the function that's called on every element in the array. Each time the callback executes, the returned value is added to the newArray
+
+// currentValue is the current element being processed in the array
+
+// index [optional] which is the current elements index being processed
+
+// array [optional] which is the array that map was called on
+
+// thisArg [optional] which is the value to use as this when executing the callback
 
 var populationData = [
   {
@@ -40,11 +56,11 @@ var addToPopulations = (populationData) => {
 
 // The callback function accepts the current value being processed in the array and can accept three optional arguments
 
-// index which is the current elements index being processed
+// index [optional] which is the current elements index being processed
 
-// array which is the array that filter was called on
+// array [optional] which is the array that filter was called on
 
-// thisArg which is the value to use as this when executing the callback
+// thisArg [optional] which is the value to use as this when executing the callback
 
 var dogData = [
   {
@@ -87,12 +103,12 @@ var overFirstIndex = (dogData) => {
 
 //Syntax Example: let result = array.reduce(callback, initValue);
 
-// Definition of the reduce arguments outlined above:
+// Definition of the reduce arguments:
 
-// result = the single value that is returned
-// array = the array to run the reduce method on
-// callback = a function to be applied to every element in the array
-// initValue = (aka accumulator) is an optional initial starting value to pass in. If it is not passed in, the 0th elemen is used as the initial value
+// result - the single value that is returned
+// array - the array to run the reduce method on
+// callback - a function to be applied to every element in the array
+// initValue - (aka accumulator) is an optional initial starting value to pass in. If it is not passed in, the 0th elemen is used as the initial value
 
 // The callback function can take four arguments:
 
@@ -101,10 +117,10 @@ var overFirstIndex = (dogData) => {
 // return result from executing something for accumulator or currentValue
 // }[, initialValue]);
 
-// accumlator = accumlates the callback function's return values. The accumlator value starts from the initial value if it is supplied
-// currentValue = the value of the current element in the array
-// index [optional] = the index of the current value in the array
-// array [optional] = the array reduce was called on
+// accumlator - accumlates the callback function's return values. The accumlator value starts from the initial value if it is supplied
+// currentValue - the value of the current element in the array
+// index [optional] - the index of the current value in the array
+// array [optional] - the array reduce was called on
 
 // Let's take a look at this example where we use a for loop to to get the sum of numbers in an array. How would you solve this problem using the reduce method?
 var arr = [1, 2, 3, 4];
@@ -186,7 +202,7 @@ var getDogNamesOnly = (dogData) => {
   return dogNames;
 };
 
-// given the nested array below, flattened, use the reduce method to flatten the nested array (should return a single array of values)
+// given the nested array below use the reduce method to flatten the nested array (result should be [0, 1, 2, 3, 4, 5])
 var nestedArray = [
   [0, 1],
   [2, 3],

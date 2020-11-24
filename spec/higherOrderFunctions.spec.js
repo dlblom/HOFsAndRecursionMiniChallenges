@@ -39,7 +39,7 @@
         expect(getCitiesPopulations).to.be.a("function");
       });
 
-      it("should use the javascript filter method", function () {
+      it("should use the javascript map method", function () {
         getCitiesPopulations(populationData);
         expect(Array.prototype.map.called).to.equal(true);
       });
@@ -48,7 +48,7 @@
         expect(getCitiesPopulations(populationData)).to.be.a("array");
       });
 
-      it("should return an array of dog objects with ages under 5", function () {
+      it("should an array of numbers representing city populations", function () {
         expect(getCitiesPopulations(populationData)).to.eql([
           964254,
           138183,
@@ -76,7 +76,7 @@
         expect(addToPopulations).to.be.a("function");
       });
 
-      it("should use the javascript filter method", function () {
+      it("should use the javascript map method", function () {
         addToPopulations(populationData);
         expect(Array.prototype.map.called).to.equal(true);
       });
@@ -85,7 +85,7 @@
         expect(addToPopulations(populationData)).to.be.a("array");
       });
 
-      it("should return an array of dog objects with ages under 5", function () {
+      it("should return an array city populations with 100 added to each", function () {
         expect(addToPopulations(populationData)).to.eql([
           964354,
           138283,
@@ -308,22 +308,22 @@
         {
           name: `Tucker`,
           age: 1,
-          breed: `Lab`,
+          breed: `Corgi`,
         },
         {
           name: `Spot`,
           age: 4,
-          breed: "Mutt",
+          breed: "Rescue",
         },
         {
           name: `Waffles`,
           age: 6,
-          breed: `Corgi`,
+          breed: `Lab`,
         },
         {
           name: `Sheldon`,
           age: 11,
-          breed: `Corgi`,
+          breed: `Great Dane`,
         },
       ];
 
@@ -393,16 +393,16 @@
         expect(flattenArray).to.be.a("function");
       });
 
-      it("should use the javascript reduce method", function () {
-        flattenArray(nestedArray);
-        expect(Array.prototype.reduce.called).to.equal(true);
-      });
+      // it("should use the javascript reduce method", function () {
+      //   flattenArray(nestedArray);
+      //   expect(Array.prototype.reduce.called).to.equal(true);
+      // });
 
       it("should return an array", function () {
-        expect(flattenArray(nestedArray)).to.be.a("array");
+        expect(flattenArray(dogData)).to.be.a("array");
       });
 
-      it("should return a flattened array from a nested array", function () {
+      it("should return a flattened array", function () {
         expect(flattenArray(nestedArray)).to.eql([0, 1, 2, 3, 4, 5]);
       });
     });

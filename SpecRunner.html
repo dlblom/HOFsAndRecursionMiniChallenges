@@ -2,25 +2,22 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Order matters when loading html pages, so we want to link our CSS file and then all of our library files before any of our code is run -->
     <link rel="stylesheet" href="./lib/mocha/mocha.css" />
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/mocha/mocha.js"></script>
     <script src="./lib/chai/chai.js"></script>
     <script src="lib/sinon/sinon.js"></script>
     <script>
-      // we use an immediatley invoked function expresion to initialize our testing library once the html page loads and this script tag is hit
         (function () {
           "use strict";
 
-          mocha.setup({ ui: "bdd" });  // activates the BDD API (it puts the describe, it, before, beforeEach, after and afterEach functions into the global scope).
+          mocha.setup({ ui: "bdd" });
 
-          window.expect = chai.expect; // makes expect from the chai library avilable globally
-
+          window.expect = chai.expect;
 
           window.onload = function () {
             window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
-          }; // runs the tests on page load
+          };
 
 
           before(function () {
@@ -63,10 +60,12 @@
 
       <!-- source files -->
       <script src="src/higherOrderFunctions.js"></script>
+      <script src="src/recursion.js"></script>
 
       <!-- spec files -->
       <script src="spec/higherOrderFunctions.spec.js"></script>
-
+      <script src="spec/recursion.spec.js"
+      ></script>
   </head>
   <body>
     <div id="mocha"></div>
