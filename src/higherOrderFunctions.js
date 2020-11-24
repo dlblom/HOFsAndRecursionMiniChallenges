@@ -38,15 +38,9 @@ var populationData = [
   },
 ];
 
-var getCitiesPopulations = (populationData) => {
-  let populations = populationData.map((city) => city.pop);
-  return populations;
-};
+var getCitiesPopulations = (populationData) => {};
 
-var addToPopulations = (populationData) => {
-  let addedPops = populationData.map((city) => city.pop + 100);
-  return addedPops;
-};
+var addToPopulations = (populationData) => {};
 
 // Filter Method Definintion: creates a new array with all elements that pass the test implemented by the provided function
 
@@ -86,18 +80,10 @@ var dogData = [
 ];
 
 // write a function that returns an array of only the dog objects with ages under 5
-var getDogsUnderFive = (dogData) => {
-  let dogsUnderFive = dogData.filter((dog) => dog.age < 5);
-  return dogsUnderFive;
-};
+var getDogsUnderFive = (dogData) => {};
 
 // write a function that returns an array of dog names beyond the first index of the dogData array
-var overFirstIndex = (dogData) => {
-  let overIndex = dogData.filter((dog, index) => {
-    return index > 1;
-  });
-  return overIndex;
-};
+var overFirstIndex = (dogData) => {};
 
 // Reduce Method Definition: The reduce method is used to apply a function to every element in the array and returns a single value. Another way to think about it is that the reduce method "reduces" an array to a single value.
 
@@ -135,10 +121,7 @@ function arraySum(arr) {
 
 // arraySum(arr) //10
 
-var getSumOfNumbers = (arr) => {
-  var sum = arr.reduce((acc, val) => acc + val, 0);
-  return sum;
-};
+var getSumOfNumbers = (arr) => {};
 
 // given the data below, use the reduce method get the sum of the total population for every city except Waco
 var populationData = [
@@ -160,15 +143,7 @@ var populationData = [
   },
 ];
 
-var getPopulationSum = (populationData) => {
-  var populationSum = populationData.reduce((acc, currentElement) => {
-    if (currentElement.city !== `Waco`) {
-      acc += currentElement.pop;
-    }
-    return acc;
-  }, 0);
-  return populationSum;
-};
+var getPopulationSum = (populationData) => {};
 
 var dogData = [
   {
@@ -194,13 +169,7 @@ var dogData = [
 ];
 
 // Using the above dogData set, use the reduce method to return an array of only the the dog names
-var getDogNamesOnly = (dogData) => {
-  var dogNames = dogData.reduce((names, dog) => {
-    names = names.concat(dog.name);
-    return names;
-  }, []);
-  return dogNames;
-};
+var getDogNamesOnly = (dogData) => {};
 
 // given the nested array below use the reduce method to flatten the nested array (result should be [0, 1, 2, 3, 4, 5])
 var nestedArray = [
@@ -209,12 +178,7 @@ var nestedArray = [
   [4, 5],
 ];
 
-var flattenArray = (nestedArray) => {
-  var flattened = nestedArray.reduce((accumulator, currentValue) => {
-    return accumulator.concat(currentValue);
-  }, []);
-  return flattened;
-};
+var flattenArray = (nestedArray) => {};
 
 // reduce intro article: https://codeburst.io/learn-understand-javascripts-reduce-function-b2b0406efbdc
 

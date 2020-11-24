@@ -18,15 +18,7 @@
 
 // Here's an example of a recursive function
 // Try running this in a google chrome snippet and stepping through the function while observing the call stack over time
-function countDownToLaunch(n) {
-  if (n === 0) {
-    console.log(`Blast off!`);
-    return;
-  } else {
-    // console.log(n);
-    countDownToLaunch(n - 1);
-  }
-}
+function countDownToLaunch(n) {}
 
 // write a recursive function called factorial which accepts a number and returns the factorial of that number
 
@@ -34,13 +26,7 @@ function countDownToLaunch(n) {
 // 4!
 // 4 * 3 * 2 * 1 = 24
 
-function factorial(n) {
-  if (n === 1 || n === 0) {
-    return 1;
-  } else {
-    return n * factorial(n - 1);
-  }
-}
+function factorial(n) {}
 
 // factorial(4) // 24
 
@@ -53,13 +39,7 @@ function factorial(n) {
 
 // sumRange example
 // 3 + 2 + 1 = 6
-function sumRange(n) {
-  if (n === 1) {
-    return 1;
-  } else {
-    return n + sumRange(n - 1);
-  }
-}
+function sumRange(n) {}
 
 //sumRange(3); // 6
 //  3 + factorial(2)  // 3 + 3
@@ -72,18 +52,7 @@ function sumRange(n) {
 // [[1], [2], [3]] -> [1, 2, 3]
 
 // write a recursive funtion flattenArray which accepts a nested array and returns a flattened array
-function flattenArray(nestedArr) {
-  var flattened = [];
-
-  for (var i = 0; i < nestedArr.length; i++) {
-    if (Array.isArray(nestedArr[i])) {
-      flattened = flattened.concat(flattenArray(nestedArr[i]));
-    } else {
-      flattened.push(nestedArr[i]);
-    }
-  }
-  return flattened;
-}
+function flattenArray(nestedArr) {}
 
 // using recursion, write a function that returns an array of names of all the backyard items that are "Active" from the backyardData set
 var backyardData = [
@@ -128,24 +97,7 @@ var backyardData = [
   },
 ];
 
-function getActiveItems(array) {
-  let activeItems = [];
-
-  // loop through the input array
-  for (var i = 0; i < array.length; i++) {
-    // if the status property at the current index is active
-    if (array[i].status === "Active") {
-      // add it to the active items array
-      activeItems.push(array[i].name);
-    }
-    // check if the object has children
-    if (array[i].children) {
-      // if it does, recursivley call function on children
-      activeItems = activeItems.concat(getActiveItems(array[i].children));
-    }
-  }
-  return activeItems;
-}
+function getActiveItems(array) {}
 
 // getActiveItem(backyardData); // ["Vacuum", "Pump", "Chair", "Plant"]
 
@@ -162,26 +114,4 @@ function getActiveItems(array) {
 // write a recursive funtion getEvens which accepts an array of numbers and returns array which contains only the even numbers
 // use a helper function, getEvensHelper
 
-function getEvens(arr) {
-  let evens = [];
-
-  function getEvensHelper(arr) {
-    // base case
-    if (arr.length === 0) {
-      return;
-    }
-
-    for (var i = 0; i < arr.length; i++) {
-      if (arr[i] % 2 === 0) {
-        evens.push(arr[i]);
-      }
-    }
-  }
-  // recursive call
-  getEvensHelper(arr.slice(1));
-  return evens;
-}
-
-// the pattern is that we are shrinking our array with each recursive call until we hit our base case
-
-getEvens([1, 2, 3, 4, 5, 6]); // [2, 4, 6]
+function getEvens(arr) {}
