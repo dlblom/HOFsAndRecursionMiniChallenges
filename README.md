@@ -13,7 +13,8 @@ $ cd officeHourMiniChallenges
 ```
 
 ```sh
-$ drag the SpecRunner.html file into a browser URL and press ENTER to see the tests
+$ drag the SpecRunner.html file into a browser URL
+and press ENTER to see the tests
 ```
 
 ### Technologies
