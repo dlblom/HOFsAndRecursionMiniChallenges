@@ -79,36 +79,36 @@
       });
     });
 
-    describe("flattenArray", function () {
+    describe("flattenNestedArray", function () {
       before(function () {
-        original = flattenArray;
-        flattenArray = sinon.spy(flattenArray);
+        original = flattenNestedArray;
+        flattenNestedArray = sinon.spy(flattenNestedArray);
       });
 
       afterEach(function () {
-        flattenArray.reset();
+        flattenNestedArray.reset();
       });
 
       after(function () {
-        flattenArray = original;
+        flattenNestedArray = original;
       });
 
       it("should return an array", function () {
-        expect(flattenArray([[1], 2])).to.be.a("array");
+        expect(flattenNestedArray([[1], 2])).to.be.a("array");
       });
 
       it("should return a flattened array from a nested array", function () {
-        expect(flattenArray([[1], 2])).to.eql([1, 2]);
+        expect(flattenNestedArray([[1], 2])).to.eql([1, 2]);
       });
 
       it("should use recursion by calling self", function () {
-        flattenArray([[1], 2]);
-        expect(flattenArray.callCount).to.be.above(1);
+        flattenNestedArray([[1], 2]);
+        expect(flattenNestedArray.callCount).to.be.above(1);
       });
 
       it("should be invoked with one argument", function () {
-        flattenArray([[1], 2]);
-        flattenArray.args.forEach((arg) => {
+        flattenNestedArray([[1], 2]);
+        flattenNestedArray.args.forEach((arg) => {
           expect(arg).to.have.length(1);
         });
       });

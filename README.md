@@ -2,7 +2,7 @@
 
 Use this repo to practice Higher Order Functions (map, filter & reduce) and recursion. The goal is to make all the tests in the spec runner pass!
 
-## Introduction to Higer Order Functions (HOFs)
+## Higer Order Functions (HOFs)
 
 What are HOFs? HOFs are functions that operate on other functions by either taking them in as arguments are returning the. Map, filter and reduce are built-in array methods in javascript
 
@@ -12,7 +12,7 @@ What are HOFs? HOFs are functions that operate on other functions by either taki
 
 - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">Reduce</a> executes a reducer functino (that you provide) on each element of the array, resulting in a single output value
 
-## Introduction to Recursion
+## Recursion
 
 What is recursion? A function that calls itself
 
@@ -28,7 +28,7 @@ When a function is invoked, it is placed on top of the call stack. Functions are
 
 How do we get recursion to stop? We invoke the same function with a different input until we reach the base case!
 
-## HELPER Function Recursion
+## Helper Function Recursion
 
 Helper function recursion works because of closures. An inner helper function is used inside of the main function so the inner funciton has access to the result variable (without the risk of resetting the variable with each iteration).
 

@@ -303,69 +303,6 @@
       });
     });
 
-    describe("getDogNamesOnly", function () {
-      var dogData = [
-        {
-          name: `Tucker`,
-          age: 1,
-          breed: `Corgi`,
-        },
-        {
-          name: `Spot`,
-          age: 4,
-          breed: "Rescue",
-        },
-        {
-          name: `Waffles`,
-          age: 6,
-          breed: `Lab`,
-        },
-        {
-          name: `Sheldon`,
-          age: 11,
-          breed: `Great Dane`,
-        },
-      ];
-
-      before(function () {
-        sinon.spy(Array.prototype, "reduce");
-        original = getDogNamesOnly;
-        getDogNamesOnly = sinon.spy(getDogNamesOnly);
-      });
-
-      afterEach(function () {
-        getDogNamesOnly.reset();
-        Array.prototype.reduce.reset();
-      });
-
-      after(function () {
-        getDogNamesOnly = original;
-        Array.prototype.reduce.restore();
-      });
-
-      it("should be a function", function () {
-        expect(getDogNamesOnly).to.be.a("function");
-      });
-
-      it("should use the javascript reduce method", function () {
-        getDogNamesOnly(dogData);
-        expect(Array.prototype.reduce.called).to.equal(true);
-      });
-
-      it("should return an array", function () {
-        expect(getDogNamesOnly(dogData)).to.be.a("array");
-      });
-
-      it("should return an array of dog names from the given array of objects", function () {
-        expect(getDogNamesOnly(dogData)).to.eql([
-          "Tucker",
-          "Spot",
-          "Waffles",
-          "Sheldon",
-        ]);
-      });
-    });
-
     describe("flattenArray", function () {
       var nestedArray = [
         [0, 1],

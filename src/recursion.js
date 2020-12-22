@@ -3,7 +3,6 @@
 // factorial example
 // 4!
 // 4 * 3 * 2 * 1 = 24
-
 function factorial(n) {}
 
 // factorial(4) // 24
@@ -30,10 +29,10 @@ function sumRange(n) {}
 // [[1], [2], [3]] -> [1, 2, 3]
 
 // write a recursive funtion flattenArray which accepts a nested array and returns a flattened array
-function flattenArray(nestedArr) {}
+function flattenNestedArray(nestedArr) {}
 
 // using recursion, write a function that returns an array of names of all the backyard items that are "Active" from the backyardData set
-var backyardData = [
+function getActiveItems([
   {
     id: 1,
     name: `Pool`,
@@ -73,13 +72,13 @@ var backyardData = [
     name: `Bench`,
     status: `Inactive`,
   },
-];
+]) {
+  // funciton logic goes here
+}
 
-function getActiveItems(array) {}
-
-// getActiveItem(backyardData); // ["Vacuum", "Pump", "Chair", "Plant"]
 
 // write a recursive funtion getEvens which accepts an array of numbers and returns array which contains only the even numbers
 // use a helper function, getEvensHelper
-
-function getEvens(arr) {}
+function getEvens([1,2,3,4]) {
+  // function logic goes here
+}
