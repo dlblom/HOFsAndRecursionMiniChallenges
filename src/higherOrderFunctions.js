@@ -1,66 +1,13 @@
-// What are HOFs? HOFs are functions that operate on other functions by either taking them in as arguments are returning them
-
-// map, filter and reduce are built-in array methods in javascript
-
-// Map Method definition: creates a new array with the results of calling the provided function on every element in the array
-
-// Syntax
-// let newArray = arr.map(callback(currentValue[, index[, array]]) {
-//   // return element for newArray, after executing something
-// }[, thisArg]);
-
-// callback is the function that's called on every element in the array. Each time the callback executes, the returned value is added to the newArray
-
-// currentValue is the current element being processed in the array
-
-// index [optional] which is the current elements index being processed
-
-// array [optional] which is the array that map was called on
-
-// thisArg [optional] which is the value to use as this when executing the callback
-
-var populationData = [
-  {
-    city: `Austin`,
-    pop: 964254,
-  },
-  {
-    city: `Waco`,
-    pop: 138183,
-  },
-  {
-    city: `Leander`,
-    pop: 56111,
-  },
-  {
-    city: `Cedar Park`,
-    pop: 76999,
-  },
-];
-
-var getCitiesPopulations = (populationData) => {
-  let populations = populationData.map((city) => city.pop);
+// TODO: Using the .map() method, complete the getCitiesPopulations so that it returns an array of the city populations only
+function getCitiesPopulations(arrayOfObjects) {
+  var populations = populationData.map((city) => city.pop);
   return populations;
-};
+}
 
 var addToPopulations = (populationData) => {
   let addedPops = populationData.map((city) => city.pop + 100);
   return addedPops;
 };
-
-// Filter Method Definintion: creates a new array with all elements that pass the test implemented by the provided function
-
-// Syntax: let newArray = arr.filter(callback(currentValue[, index[, array]]) {
-// return element for newArray, if true
-//}[, thisArg]);
-
-// The callback function accepts the current value being processed in the array and can accept three optional arguments
-
-// index [optional] which is the current elements index being processed
-
-// array [optional] which is the array that filter was called on
-
-// thisArg [optional] which is the value to use as this when executing the callback
 
 var dogData = [
   {
@@ -133,14 +80,11 @@ function arraySum(arr) {
   return sum;
 }
 
-// arraySum(arr) //10
-
 var getSumOfNumbers = (arr) => {
   var sum = arr.reduce((acc, val) => acc + val, 0);
   return sum;
 };
 
-// given the data below, use the reduce method get the sum of the total population for every city except Waco
 var populationData = [
   {
     city: `Austin`,
@@ -193,7 +137,6 @@ var dogData = [
   },
 ];
 
-// given the nested array below use the reduce method to flatten the nested array (result should be [0, 1, 2, 3, 4, 5])
 var nestedArray = [
   [0, 1],
   [2, 3],
@@ -206,9 +149,3 @@ var flattenArray = (nestedArray) => {
   }, []);
   return flattened;
 };
-
-// reduce intro article: https://codeburst.io/learn-understand-javascripts-reduce-function-b2b0406efbdc
-
-// benefits of using reduce article: https://medium.com/@dave_lunny/reduce-your-fears-about-array-reduce-629b334ab945
-
-// https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce
