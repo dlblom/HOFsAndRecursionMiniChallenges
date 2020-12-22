@@ -10,7 +10,7 @@ What are HOFs? HOFs are functions that operate on other functions by either taki
 
 - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Filter</a> creates a new array with all elements that pass teh test implemented by the provided function
 
-- <a hfref="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">Reduce</a> executes a reducer functino (that you provide) on each element of the array, resulting in a single output value
+- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">Reduce</a> executes a reducer functino (that you provide) on each element of the array, resulting in a single output value
 
 ## Introduction to Recursion
 
@@ -28,7 +28,7 @@ When a function is invoked, it is placed on top of the call stack. Functions are
 
 How do we get recursion to stop? We invoke the same function with a different input until we reach the base case!
 
-## HELPER FUNCTION RECURSION
+## HELPER Function Recursion
 
 Helper function recursion works because of closures. An inner helper function is used inside of the main function so the inner funciton has access to the result variable (without the risk of resetting the variable with each iteration).
 
