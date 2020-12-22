@@ -94,7 +94,9 @@ function overFirstIndex([
 };
 
 // TODO: Using the .reduce() method, complete the getSumOfNumbers function so that it returns the sum of an array of numbers
-var getSumOfNumbers = ([1, 2, 3, 4]) => {};
+function getSumOfNumbers([1, 2, 3, 4]) {
+  // function logic goes here
+};
 
 // TODO: Using the .reduce() method, complete the  getPopulationSum funciton so that is returns the sum of every city's population except Waco
 function getPopulationSum([
