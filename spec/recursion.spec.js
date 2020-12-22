@@ -130,6 +130,7 @@
                   id: 3,
                   name: `Pump`,
                   status: `Active`,
+                  children: [],
                 },
               ],
             },
@@ -139,21 +140,25 @@
           id: 4,
           name: `Chair`,
           status: `Active`,
+          children: [],
         },
         {
           id: 5,
           name: `Plant`,
           status: `Active`,
+          children: [],
         },
         {
           id: 6,
           name: `Umbrella`,
           status: `Inactive`,
+          children: [],
         },
         {
           id: 7,
           name: `Bench`,
           status: `Inactive`,
+          children: [],
         },
       ];
 
