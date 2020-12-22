@@ -303,7 +303,7 @@
       });
     });
 
-    describe("flattenArray", function () {
+    describe("flattenArrayofArrays", function () {
       var nestedArray = [
         [0, 1],
         [2, 3],
@@ -312,35 +312,35 @@
 
       before(function () {
         sinon.spy(Array.prototype, "reduce");
-        original = flattenArray;
-        flattenArray = sinon.spy(flattenArray);
+        original = flattenArrayofArrays;
+        flattenArrayofArrays = sinon.spy(flattenArrayofArrays);
       });
 
       afterEach(function () {
-        flattenArray.reset();
+        flattenArrayofArrays.reset();
         Array.prototype.reduce.reset();
       });
 
       after(function () {
-        flattenArray = original;
+        flattenArrayofArrays = original;
         Array.prototype.reduce.restore();
       });
 
       it("should be a function", function () {
-        expect(flattenArray).to.be.a("function");
+        expect(flattenArrayofArrays).to.be.a("function");
       });
 
-      // it("should use the javascript reduce method", function () {
-      //   flattenArray(nestedArray);
-      //   expect(Array.prototype.reduce.called).to.equal(true);
-      // });
+      it("should use the javascript reduce method", function () {
+        flattenArrayofArrays(nestedArray);
+        expect(Array.prototype.reduce.called).to.equal(true);
+      });
 
       it("should return an array", function () {
-        expect(flattenArray(dogData)).to.be.a("array");
+        expect(flattenArrayofArrays(nestedArray)).to.be.a("array");
       });
 
       it("should return a flattened array", function () {
-        expect(flattenArray(nestedArray)).to.eql([0, 1, 2, 3, 4, 5]);
+        expect(flattenArrayofArrays(nestedArray)).to.eql([0, 1, 2, 3, 4, 5]);
       });
     });
   });
