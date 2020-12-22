@@ -193,15 +193,6 @@ var dogData = [
   },
 ];
 
-// Using the above dogData set, use the reduce method to return an array of only the the dog names
-var getDogNamesOnly = (dogData) => {
-  var dogNames = dogData.reduce((names, dog) => {
-    names = names.concat(dog.name);
-    return names;
-  }, []);
-  return dogNames;
-};
-
 // given the nested array below use the reduce method to flatten the nested array (result should be [0, 1, 2, 3, 4, 5])
 var nestedArray = [
   [0, 1],
