@@ -114,93 +114,6 @@
       });
     });
 
-    describe("getActiveItems", function () {
-      var backyardData = [
-        {
-          id: 1,
-          name: `Pool`,
-          status: `Inactive`,
-          children: [
-            {
-              id: 2,
-              name: `Vacuum`,
-              status: `Active`,
-              children: [
-                {
-                  id: 3,
-                  name: `Pump`,
-                  status: `Active`,
-                  children: [],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: 4,
-          name: `Chair`,
-          status: `Active`,
-          children: [],
-        },
-        {
-          id: 5,
-          name: `Plant`,
-          status: `Active`,
-          children: [],
-        },
-        {
-          id: 6,
-          name: `Umbrella`,
-          status: `Inactive`,
-          children: [],
-        },
-        {
-          id: 7,
-          name: `Bench`,
-          status: `Inactive`,
-          children: [],
-        },
-      ];
-
-      before(function () {
-        original = getActiveItems;
-        getActiveItems = sinon.spy(getActiveItems);
-      });
-
-      afterEach(function () {
-        getActiveItems.reset();
-      });
-
-      after(function () {
-        getActiveItems = original;
-      });
-
-      it("should return an array", function () {
-        expect(getActiveItems(backyardData)).to.be.a("array");
-      });
-
-      it("should return an array of active item names", function () {
-        expect(getActiveItems(backyardData)).to.eql([
-          "Vacuum",
-          "Pump",
-          "Chair",
-          "Plant",
-        ]);
-      });
-
-      it("should use recursion by calling self", function () {
-        getActiveItems(backyardData);
-        expect(getActiveItems.callCount).to.be.above(1);
-      });
-
-      it("should be invoked with one argument", function () {
-        getActiveItems(backyardData);
-        getActiveItems.args.forEach((arg) => {
-          expect(arg).to.have.length(1);
-        });
-      });
-    });
-
     describe("getEvens", function () {
       before(function () {
         original = getEvens;
@@ -226,6 +139,93 @@
       it("should invoke getEvens once", function () {
         getEvens([1, 2, 3, 4, 5, 6]);
         expect(getEvens.callCount).to.equal(1);
+      });
+    });
+  });
+
+  describe("getActiveItems", function () {
+    var backyardData = [
+      {
+        id: 1,
+        name: `Pool`,
+        status: `Inactive`,
+        children: [
+          {
+            id: 2,
+            name: `Vacuum`,
+            status: `Active`,
+            children: [
+              {
+                id: 3,
+                name: `Pump`,
+                status: `Active`,
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 4,
+        name: `Chair`,
+        status: `Active`,
+        children: [],
+      },
+      {
+        id: 5,
+        name: `Plant`,
+        status: `Active`,
+        children: [],
+      },
+      {
+        id: 6,
+        name: `Umbrella`,
+        status: `Inactive`,
+        children: [],
+      },
+      {
+        id: 7,
+        name: `Bench`,
+        status: `Inactive`,
+        children: [],
+      },
+    ];
+
+    before(function () {
+      original = getActiveItems;
+      getActiveItems = sinon.spy(getActiveItems);
+    });
+
+    afterEach(function () {
+      getActiveItems.reset();
+    });
+
+    after(function () {
+      getActiveItems = original;
+    });
+
+    it("should return an array", function () {
+      expect(getActiveItems(backyardData)).to.be.a("array");
+    });
+
+    it("should return an array of active item names", function () {
+      expect(getActiveItems(backyardData)).to.eql([
+        "Vacuum",
+        "Pump",
+        "Chair",
+        "Plant",
+      ]);
+    });
+
+    it("should use recursion by calling self", function () {
+      getActiveItems(backyardData);
+      expect(getActiveItems.callCount).to.be.above(1);
+    });
+
+    it("should be invoked with one argument", function () {
+      getActiveItems(backyardData);
+      getActiveItems.args.forEach((arg) => {
+        expect(arg).to.have.length(1);
       });
     });
   });
