@@ -31,6 +31,6 @@ function getPopulationSum(arrayOfObjects) {
 }
 
 // TODO: Using the .reduce() method, complete the flattenArray funciton so that it flattens the nested array
-function flattenArray(arrayOfArrays) {
+function flattenArrayofArrays(arrayOfArrays) {
   // TODO: funcion logic goes here
 }
