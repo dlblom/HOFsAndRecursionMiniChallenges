@@ -1,7 +1,7 @@
 (function () {
   "use-strict";
 
-  //notice that describe itself is a higher order function. The
+  //notice that describe itself is a higher order function
   describe("Recursion Practice", function () {
     describe("factorial", function () {
       before(function () {
