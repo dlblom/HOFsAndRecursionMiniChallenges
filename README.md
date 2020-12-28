@@ -23,7 +23,8 @@ What are the components of recursion?
 1. Base Case - where the recursion stops
 2. Recursive call to function itself
 
-Recursion and the call stack
+### Recursion and the call stack
+
 When a function is invoked, it is placed on top of the call stack. Functions are removed one at a time from the top of the stack when we hit a return statement. With recursion, the same function gets pushed onto the call stack over and over and over.
 
 How do we get recursion to stop? We invoke the same function with a different input until we reach the base case!
@@ -49,9 +50,10 @@ Navigate to the project Directory
 $ cd officeHourMiniChallenges
 ```
 
+To see the tests:
+
 ```sh
-$ drag the SpecRunner.html file into a browser URL
-and press ENTER to see the tests
+$ open the project in VS Code, then right click the SpecRunner.html file and select the "Open with Live Server Option" OR drag the SpecRunner.html file into a browser then press ENTER
 ```
 
 ### Helpful Articles
@@ -60,6 +62,7 @@ and press ENTER to see the tests
 - <a href="https://codeburst.io/learn-understand-javascripts-reduce-function-b2b0406efbdc">Reduce Introduction</a>
 - <a href="https://medium.com/@dave_lunny/reduce-your-fears-about-array-reduce-629b334ab945">Benefits of Using Reduce</a>
 - <a href="https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce">Understanding Reduce</a>
+- <a href="https://www.thecodingdelight.com/understanding-recursion-javascript/">Understanding Recursion in Javascript</a>
 
 ### Technologies
 
