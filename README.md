@@ -50,9 +50,10 @@ Navigate to the project Directory
 $ cd officeHourMiniChallenges
 ```
 
+To see the tests:
+
 ```sh
-$ drag the SpecRunner.html file into a browser URL
-and press ENTER to see the tests
+$ open the project in VS Code, then right click the SpecRunner.html file and select the "Open with Live Server Option" OR drag the SpecRunner.html file into a browser then press ENTER
 ```
 
 ### Helpful Articles
