@@ -71,16 +71,18 @@ function getActiveItems(arrayOfNestedObjects) {
   let activeItems = [];
 
   // loop through the input array
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0; i < arrayOfNestedObjects.length; i++) {
     // if the status property at the current index is active
-    if (array[i].status === "Active") {
+    if (arrayOfNestedObjects[i].status === "Active") {
       // add it to the active items array
-      activeItems.push(array[i].name);
+      activeItems.push(arrayOfNestedObjects[i].name);
     }
     // check if the object has children
-    if (array[i].children) {
+    if (arrayOfNestedObjects[i].children) {
       // if it does, recursivley call function on children
-      activeItems = activeItems.concat(getActiveItems(array[i].children));
+      activeItems = activeItems.concat(
+        getActiveItems(arrayOfNestedObjects[i].children)
+      );
     }
   }
   return activeItems;
