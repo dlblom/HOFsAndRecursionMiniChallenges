@@ -2,7 +2,7 @@
 
 // TODO: Using the .map() method, complete the getCitiesPopulations so that it returns an array of the city populations only
 function getCitiesPopulations(arrayOfObjects) {
-  //function logic goes here
+  //TODO: function logic goes here
 }
 
 //TODO: Using the .map() method, complete the addToPopulations function so that it returns an array of populations with 100 added to each population
@@ -27,7 +27,7 @@ function getSumOfNumbers(arrayOfNumbers) {
 
 // TODO: Using the .reduce() method, complete the  getPopulationSum funciton so that is returns the sum of every city's population except Waco
 function getPopulationSum(arrayOfObjects) {
-  //TODO: funciton logic goes here
+  // TODO: funciton logic goes here
 }
 
 // TODO: Using the .reduce() method, complete the flattenArrayofArrays funciton so that it flattens the nested array
