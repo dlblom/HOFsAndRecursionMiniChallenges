@@ -79,38 +79,66 @@
       });
     });
 
-    describe("flattenArray", function () {
+    describe("flattenNestedArray", function () {
       before(function () {
-        original = flattenArray;
-        flattenArray = sinon.spy(flattenArray);
+        original = flattenNestedArray;
+        flattenNestedArray = sinon.spy(flattenNestedArray);
       });
 
       afterEach(function () {
-        flattenArray.reset();
+        flattenNestedArray.reset();
       });
 
       after(function () {
-        flattenArray = original;
+        flattenNestedArray = original;
       });
 
       it("should return an array", function () {
-        expect(flattenArray([[1], 2])).to.be.a("array");
+        expect(flattenNestedArray([[1], 2])).to.be.a("array");
       });
 
       it("should return a flattened array from a nested array", function () {
-        expect(flattenArray([[1], 2])).to.eql([1, 2]);
+        expect(flattenNestedArray([[1], 2])).to.eql([1, 2]);
       });
 
       it("should use recursion by calling self", function () {
-        flattenArray([[1], 2]);
-        expect(flattenArray.callCount).to.be.above(1);
+        flattenNestedArray([[1], 2]);
+        expect(flattenNestedArray.callCount).to.be.above(1);
       });
 
       it("should be invoked with one argument", function () {
-        flattenArray([[1], 2]);
-        flattenArray.args.forEach((arg) => {
+        flattenNestedArray([[1], 2]);
+        flattenNestedArray.args.forEach((arg) => {
           expect(arg).to.have.length(1);
         });
+      });
+    });
+
+    describe("getEvens", function () {
+      before(function () {
+        original = getEvens;
+        getEvens = sinon.spy(getEvens);
+      });
+
+      afterEach(function () {
+        getEvens.reset();
+      });
+
+      after(function () {
+        getEvens = original;
+      });
+
+      it("should return an array", function () {
+        expect(getEvens([1, 2, 3, 4])).to.be.a("array");
+      });
+
+      it("should return an array of even numbers", function () {
+        expect(getEvens([1, 2, 3, 4])).to.eql([2, 4]);
+      });
+
+      it("should use recursion by calling self", function () {
+        getEvens([1, 2, 3, 4]);
+        expect(getEvens.callCount).to.be.above(1);
       });
     });
 
@@ -193,34 +221,6 @@
         getActiveItems.args.forEach((arg) => {
           expect(arg).to.have.length(1);
         });
-      });
-    });
-
-    describe("getEvens", function () {
-      before(function () {
-        original = getEvens;
-        getEvens = sinon.spy(getEvens);
-      });
-
-      afterEach(function () {
-        getEvens.reset();
-      });
-
-      after(function () {
-        getEvens = original;
-      });
-
-      it("should return an array", function () {
-        expect(getEvens([1, 2, 3, 4])).to.be.a("array");
-      });
-
-      it("should return an array of even numbers", function () {
-        expect(getEvens([1, 2, 3, 4])).to.eql([2, 4]);
-      });
-
-      it("should use helper function recursion", function () {
-        getEvens([1, 2, 3, 4, 5, 6]);
-        expect(getEvens.callCount).not.to.be.above(1);
       });
     });
   });
