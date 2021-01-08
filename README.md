@@ -1,4 +1,4 @@
-# officeHourMiniChallenges
+# HOFsAndRecursionMiniChallenges
 
 Use this repo to practice Higher Order Functions (map, filter & reduce) and recursion. The goal is to make all the tests in the spec runner pass!
 
