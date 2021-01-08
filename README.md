@@ -1,6 +1,10 @@
-# # HOFsAndRecursionMiniChallenges
+# HOFsAndRecursionMiniChallenges
 
 Use this repo to practice Higher Order Functions (map, filter & reduce) and recursion. The goal is to make all the tests in the spec runner pass!
+
+## Pending for this repo
+
+- optimize the HOFs tests
 
 ## Higer Order Functions (HOFs)
 
