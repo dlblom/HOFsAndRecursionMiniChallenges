@@ -5,6 +5,7 @@ Use this repo to practice Higher Order Functions (map, filter & reduce) and recu
 ## Pending for this repo
 
 - optimize the HOFs tests
+- not enough repition to use beforeEach and afterEach logic for some of the tests (if setup not being used in more than one of the it blocks, then not optimal to have hook running on every test. Refactor to run those operations in the one block needing it)
 
 ## Higer Order Functions (HOFs)
 
